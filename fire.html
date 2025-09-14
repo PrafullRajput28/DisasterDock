@@ -168,6 +168,66 @@
       font-weight: bold;
       color: #333;
     }
+
+    /* Media Queries for Mobile Phones */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .section-box {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+
+    .section-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-box p {
+        font-size: 1rem;
+    }
+
+    .slideshow-box {
+        height: 250px;
+    }
+
+    .overlay h2 {
+        font-size: 1.2rem;
+    }
+
+    .overlay p {
+        font-size: 0.9rem;
+    }
+
+    .video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-box {
+        width: 90%;
+    }
+
+    .quiz-section button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .emergency-section p {
+        font-size: 1rem;
+    }
+}
   </style>
 </head>
 <body>
@@ -179,16 +239,6 @@
   </div>
 
   <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#slideshow">Bravery</a></li>
-      <li><a href="#videos">Safety Tips</a></li>
-      <li><a href="#quiz">Quiz</a></li>
-      <li><a href="#emergency">Emergency Numbers</a></li>
-    </ul>
-  </nav>
-
   <!-- Intro Section -->
   <div id="home" class="section-box">
     <h2>Why Practice Fire Drills?</h2>

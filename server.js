@@ -4,15 +4,15 @@ const nodemailer = require("nodemailer");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+app.use(cors()); // You can specify the allowed origin here for better security: app.use(cors({ origin: 'https://shashank-2004.github.io' }));
 app.use(bodyParser.json());
 
-// Setup email transporter (use your Gmail + App Password)
+// Setup email transporter using environment variables
 let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "misrakrish76@gmail.com", // 🔹 replace with your Gmail
-    pass: "utzb gigl gkii xohp"    // 🔹 use App Password, not your normal password
+    user: process.env.GMAIL_USER, // Use environment variables for security
+    pass: process.env.GMAIL_PASS  // Use environment variables for security
   }
 });
 
@@ -24,9 +24,9 @@ app.post("/submit", (req, res) => {
   }
 
   const mailOptions = {
-    from: '"Consultation Form" <misrakrish76@gmail.com>',  // ✅ fixed
-    to: "misrakrish76@gmail.com",   // 🔹 where you want to receive
-    replyTo: email,                 // 🔹 user’s email (so reply goes to them)
+    from: `"Consultation Form" <${process.env.GMAIL_USER}>`,
+    to: process.env.GMAIL_USER, // The recipient can also be an environment variable
+    replyTo: email,
     subject: "New Consultation Request",
     html: `
       <h2>New Consultation Request</h2>
@@ -48,6 +48,8 @@ app.post("/submit", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("✅ Server running on http://localhost:3000");
+// Use a dynamic port provided by the hosting environment
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
 });

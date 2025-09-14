@@ -14,7 +14,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 .header {
     background-color: #fff;
     box-shadow: var(--shadow);
@@ -49,7 +48,7 @@ body {
 }
 
 .site-name {
-    font-size: 1.5rem;
+    font-size: 45px;
     font-weight: 700;
     color: var(--text-color);
     margin: 0;
@@ -303,7 +302,43 @@ body {
         gap: 0;
     }
 }
+/* Add this new CSS */
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
 
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Delete or comment out this old rule */
+/* .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(SIHbackground_image_1.png);
+    background-position: center;
+    z-index: -2;
+} */
 .hero-section {
     position: relative;
     height: 80vh;
@@ -330,17 +365,6 @@ body {
   margin-bottom: 0.6rem;       /* Space between items */
   text-align: left;            /* Keep text aligned */
   line-height: 1.5;            /* Better readability */
-}
-
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(SIHbackground_image_1.png);
-    background-position: center;
-    z-index: -2;
 }
 
 .hero-overlay {
@@ -603,7 +627,7 @@ body {
     color: #9ca3af;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
-    display: block;
+    display: inline;
     margin-bottom: 0.5rem;
 }
 
@@ -728,4 +752,17 @@ body {
     .point-content{
         margin-top: -20px;
     }
+    .site-name{
+        font-size: 33px;
+    }
+   .footer-section{
+    align-items: center;
+    justify-content: space-evenly;
+   }
+   .hero-heading{
+    font-size: 40px;
+}
+   .hero-section{
+    height: 600px;
+   }
 }

@@ -31,7 +31,7 @@
             <nav class="navigation">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
+                        <a href="index.html" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item has-dropdown">
                         <a href="#" class="nav-link" aria-expanded="false" aria-controls="about-menu">About Us</a>
@@ -70,13 +70,20 @@
     </header>
 
     <section class="hero-section">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h2 class="hero-heading">We Empower Educational Communities to Stay Ready, Stay Safe, and Stay Resilient.</h2>
-            <p class="hero-subheading">Equipping students, faculty, and staff with the knowledge and skills to face any emergency with confidence.</p>
-        </div>
-    </section>
+    <div class="slideshow-container">
+        <div class="slide" style="background-image: url('SIHbackground_image_1.png');"></div>
+        <div class="slide" style="background-image: url('Slide1.jpg');"></div>
+        <div class="slide" style="background-image: url('slide2.jpg');"></div>
+        <div class="slide" style="background-image: url('slide3.jpg');"></div>
+        <div class="slide" style="background-image: url('slide4.jpg');"></div>
+        <div class="slide" style="background-image: url('slide5.jpg');"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h2 class="hero-heading">We Empower Educational Communities to Stay Ready, Stay Safe, and Stay Resilient.</h2>
+        <p class="hero-subheading">Equipping students, faculty, and staff with the knowledge and skills to face any emergency with confidence.</p>
+    </div>
+</section>
 
     <section class="section">
         <div class="container">
@@ -145,7 +152,7 @@
                     <ul class="program-content">
                                     <li>Advanced early warning systems</li>
                                     <li>Real-time campus-wide alerts</li>
-                                    <li>Enables swift, effective response/li>
+                                    <li>Enables swift, effective response</li>
                     </ul>
                 </div>
                 <div class="program-card">
@@ -199,7 +206,7 @@
                         <path d="M20 12v16M12 20h16" stroke="#fff" stroke-width="2" stroke-linecap="round" />
                     </svg>
                     <div class="site-info">
-                        <h1 class="site-name">The Prepared School Initiative</h1>
+                        <h1 class="site-name">DisasterDock</h1>
                         <p class="tagline">Building a Culture of Safety and Preparedness.</p>
                     </div>
                 </div>
@@ -219,8 +226,8 @@
             <div class="footer-section">
                 <h4>Contact Us</h4>
                 <ul class="footer-link-list">
-                    <li>Email: <a href="disasterdock@gmail.com">disasterdock@gmail.com</a></li>
-                    <li>Phone: <a href="9065494811">9065494811</a></li>
+                    <li>Email: <a href="mailto:disasterdock@gmail.com">disasterdock@gmail.com</a></li>
+                    <li>Phone: <a href="tel:+919065494811">+91-9065494811</a></li>
                     <li>Address: Jaypee University Of Engineering and Technology,Raghogarh,Guna,,MP</li>
                 </ul>
             </div>
@@ -275,6 +282,28 @@
             });
         });
     </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // ... (your existing scripts) ...
+
+        // Slideshow functionality
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        const slideInterval = 2000; // Change image every 5 seconds
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Initially show the first slide
+        slides[currentSlide].classList.add('active');
+
+        // Start the slideshow
+        setInterval(nextSlide, slideInterval);
+    });
+</script>
     <script src="server.js"></script>
 </body>
 </html>
